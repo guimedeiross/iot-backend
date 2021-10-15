@@ -1,10 +1,17 @@
-const knex = require('knex')({
-    client: 'pg',
-    connection: {
-      host : '127.0.0.1',
-      port : 3306,
-      user : 'your_database_user',
-      password : 'your_database_password',
-      database : 'myapp_test'
-    }
-  });
+const config = require('../server')
+console.log(config)
+
+module.exports = {
+  client: 'pg',
+  connection: {
+    host: process.env.DB_HOST,
+    port: parseInt(process.env.DB_PORT),
+    user: process.env.DB_USER,
+    password: console.log(process.env.DB_PASSWORD),
+    database: process.env.DB_DATABASE,
+  },
+  migrations: {
+    tableName: "knex_migrations",
+    directory: "./migrations",
+  }
+}

@@ -1,12 +1,12 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const PORT = 3000;
 
 app.use(express.json())
-  
-require('./controllers/sensors')(app)
+app.use(cors())
 
-module.exports = require('dotenv').config()
+require('./controllers/sensors')(app)
 
 app.listen(PORT, (err) => {
     if (err) console.log(err)

@@ -3,6 +3,24 @@ Content-Type: application/json
 
 {
     "type_sensor":"test",
-    "name_sensor":"name_test",
-    "value_sensor": 70
+    "name_sensor":"test463",
+    "value_sensor": "70.5"
 }
+
+######################################################
+
+PUT http://localhost:3000/api/update/14
+Content-Type: application/json
+
+{
+    "type_sensor":"modificado2",
+    "name_sensor":"modificado2",
+    "value_sensor": "170"
+}
+
+######################################################
+GET http://localhost:3000/api/getSingle/15
+
+######################################################
+
+GET http://localhost:3000/api/getAll

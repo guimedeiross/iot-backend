@@ -1,5 +1,4 @@
-const config = require('../server')
-console.log(config)
+require('dotenv').config()
 
 module.exports = {
   client: 'pg',
@@ -7,7 +6,7 @@ module.exports = {
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT),
     user: process.env.DB_USER,
-    password: console.log(process.env.DB_PASSWORD),
+    password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
   },
   migrations: {

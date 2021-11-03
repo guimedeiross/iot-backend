@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/api/insert', async (req, res) => {
     const result = await validator(req)
     if(typeof result === 'string') {
-        res.status(400).send({ "Erro": result })
+        return res.status(400).send({ "Erro": result })
     }
     res.status(201).send()
 })
@@ -15,7 +15,7 @@ router.post('/api/insert', async (req, res) => {
 router.put('/api/update/:id', async (req, res) => {
     const result = await validator(req)
     if(typeof result === 'string') {
-        res.status(400).send({ "Erro": result })
+        return res.status(400).send({ "Erro": result })
     }
     res.status(204).send()
 })
@@ -23,7 +23,7 @@ router.put('/api/update/:id', async (req, res) => {
 router.get('/api/getSingle/:id', async (req, res) => {
     const result = await singleSensor(req)
     if(typeof result === 'string') {
-        res.status(400).send({ "Erro": result })
+        return res.status(400).send({ "Erro": result })
     }
     res.status(200).send(JSON.stringify(result))
 })

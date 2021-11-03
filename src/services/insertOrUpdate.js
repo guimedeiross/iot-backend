@@ -7,7 +7,7 @@ const validator = async ({ body, params, method }) => {
     if (params.id) sensorCopy.id = params.id
     let floatValue = 0
     try {
-        if (method === 'PUT') {
+        if (method === 'PUT' || method === 'put') {
             if (!sensorCopy.id) {
                 throw new Error("ID do sensor deve ser informado")
             }

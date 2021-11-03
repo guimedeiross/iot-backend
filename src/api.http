@@ -8,15 +8,27 @@ Content-Type: application/json
 }
 
 ######################################################
-
-PUT http://localhost:3000/api/update/14
+#Sensor de Umidade
+PUT http://localhost:3000/api/update/18
 Content-Type: application/json
 
 {
-    "type_sensor":"modificado2",
-    "name_sensor":"modificado2",
-    "value_sensor": "170"
+    "type_sensor":"umidade",
+    "name_sensor":"Sensor de Umidade",
+    "value_sensor": "90"
 }
+
+######################################################
+#Sensor de Temperatura
+PUT http://localhost:3000/api/update/17
+Content-Type: application/json
+
+{
+    "type_sensor":"temperatura",
+    "name_sensor":"Sensor de Temperatura",
+    "value_sensor": "20"
+}
+
 
 ######################################################
 GET http://localhost:3000/api/getSingle/15

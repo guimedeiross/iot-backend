@@ -18,7 +18,7 @@ const validator = async ({ body, params, method }) => {
         if (name_sensor === '' || !name_sensor) {
             throw new Error("Nome do sensor deve ser informado")
         }
-        if (!value_sensor) {
+        if (value_sensor === '') {
             throw new Error("Valor do sensor deve ser informado")
         }
         typeof value_sensor === 'string' ? floatValue = Number(value_sensor) : floatValue = value_sensor
